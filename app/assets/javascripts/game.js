@@ -19,7 +19,7 @@ function getAction( key ) {
   }
 }
 
-$(document).keydown( function( event ) {
+$(document).keyup( function( event ) {
   var action = getAction( event.which );
   if ( action != "" ) {
     var href = $("#" + action).attr("href") + ".json";
