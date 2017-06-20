@@ -1,6 +1,38 @@
 class PlayersController < ApplicationController
   before_action :set_player, only: [:show, :edit, :update, :destroy]
 
+  def up
+    @player.y_pos -= 1;
+    @player.save;
+    respond_to do |format|
+      format.html { redirect_to game_map_path }
+    end
+  end
+  
+  def down
+    @player.y_pos += 1;
+    @player.save;
+    respond_to do |format|
+      format.html { redirect_to game_map_path }
+    end
+  end
+  
+  def left
+    @player.x_pos -= 1;
+    @player.save;
+    respond_to do |format|
+      format.html { redirect_to game_map_path }
+    end
+  end
+  
+  def right
+    @player.x_pos += 1;
+    @player.save;
+    respond_to do |format|
+      format.html { redirect_to game_map_path }
+    end
+  end
+
   # GET /players
   # GET /players.json
   def index
