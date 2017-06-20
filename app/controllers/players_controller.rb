@@ -1,11 +1,12 @@
 class PlayersController < ApplicationController
-  before_action :set_player, only: [:show, :edit, :update, :destroy]
+  before_action :set_player, only: [:show, :edit, :update, :destroy, :up, :down, :left, :right]
 
   def up
     @player.y_pos -= 1;
     @player.save;
     respond_to do |format|
       format.html { redirect_to game_map_path }
+      format.json { render :show, status: :ok, location: @player }
     end
   end
   
@@ -14,6 +15,7 @@ class PlayersController < ApplicationController
     @player.save;
     respond_to do |format|
       format.html { redirect_to game_map_path }
+      format.json { render :show, status: :ok, location: @player }
     end
   end
   
@@ -22,6 +24,7 @@ class PlayersController < ApplicationController
     @player.save;
     respond_to do |format|
       format.html { redirect_to game_map_path }
+      format.json { render :show, status: :ok, location: @player }
     end
   end
   
@@ -30,6 +33,7 @@ class PlayersController < ApplicationController
     @player.save;
     respond_to do |format|
       format.html { redirect_to game_map_path }
+      format.json { render :show, status: :ok, location: @player }
     end
   end
 
