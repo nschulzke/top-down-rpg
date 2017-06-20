@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :players
-  get 'game/map'
+  root to: 'game#map'
 
   get 'game/menu'
 

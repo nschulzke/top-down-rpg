@@ -2,7 +2,13 @@
   <% 11.times do |row| %>
   <tr>
     <% 11.times do |column| %>
-    <td></td>
+    <%
+      name = ""
+      if @player.x_pos == column && @player.y_pos == row
+        name = "player"
+      end
+    %>
+    <td class="<%= name %>"></td>
     <% end %>
   </tr>
   <% end %>
