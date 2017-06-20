@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :players
   get 'game/map'
 
   get 'game/menu'
