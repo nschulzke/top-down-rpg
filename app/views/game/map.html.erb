@@ -13,7 +13,9 @@
   </tr>
   <% end %>
 </table>
-<%= link_to 'Up', player_up_path(@player), id: "up" %>
-<%= link_to 'Down', player_down_path(@player), id: "down" %>
-<%= link_to 'Left', player_left_path(@player), id: "left" %>
-<%= link_to 'Right', player_right_path(@player), id: "right" %>
+<div style="display:none;">
+  <%= link_to 'Up', player_up_path(@player), id: "up" %>
+  <%= link_to 'Down', player_down_path(@player), id: "down" %>
+  <%= link_to 'Left', player_left_path(@player), id: "left" %>
+  <%= link_to 'Right', player_right_path(@player), id: "right" %>
+</div>
