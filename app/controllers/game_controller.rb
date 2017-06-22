@@ -1,6 +1,7 @@
 class GameController < ApplicationController
   def map
-    @player = Player.first
+    @players = Player.all;
+    @player = Player.find(params[:id])
   end
 
   def menu

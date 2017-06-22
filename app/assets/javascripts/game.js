@@ -23,11 +23,11 @@ $(document).keyup( function( event ) {
   var action = getAction( event.which );
   if ( action != "" ) {
     var href = $("#" + action).attr("href") + ".json";
-      $.ajax({
+    $.ajax( {
       url: href,
       success: function( data ) {
         window.location.reload();
       }
-    });
+    } );
   }
 } );

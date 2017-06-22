@@ -4,8 +4,10 @@
     <% 11.times do |column| %>
     <%
       name = ""
-      if @player.x_pos == column && @player.y_pos == row
-        name = "player"
+      @players.each do |player|
+        if player.x_pos == column && player.y_pos == row
+          name = "player"
+        end
       end
     %>
     <td class="<%= name %>"></td>

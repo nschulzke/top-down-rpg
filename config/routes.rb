@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'players/:id/left', to: 'players#left', as: 'player_left'
   get 'players/:id/right', to: 'players#right', as: 'player_right'
 
-  get 'map', to: 'game#map', as: 'game_map'
+  get 'map/:id', to: 'game#map', as: 'game_map'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
