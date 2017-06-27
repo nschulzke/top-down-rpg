@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :monsters
   resources :players
   root to: 'game#menu'
   

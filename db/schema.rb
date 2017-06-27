@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170620210237) do
+ActiveRecord::Schema.define(version: 20170627142120) do
+
+  create_table "map_items", force: :cascade do |t|
+    t.integer "x_pos"
+    t.integer "y_pos"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "monsters", force: :cascade do |t|
+    t.string "name"
+    t.integer "x_pos"
+    t.integer "y_pos"
+    t.integer "health"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "players", force: :cascade do |t|
     t.string "name"
