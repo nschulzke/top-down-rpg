@@ -4,6 +4,7 @@ class PlayersController < ApplicationController
   def up
     @player.y_pos -= 1;
     @player.save;
+    MapBroadcastJob.perform_later
     respond_to do |format|
       format.html { redirect_to game_map_path }
       format.json { render :show, status: :ok, location: @player }
@@ -13,6 +14,7 @@ class PlayersController < ApplicationController
   def down
     @player.y_pos += 1;
     @player.save;
+    MapBroadcastJob.perform_later
     respond_to do |format|
       format.html { redirect_to game_map_path }
       format.json { render :show, status: :ok, location: @player }
@@ -22,6 +24,7 @@ class PlayersController < ApplicationController
   def left
     @player.x_pos -= 1;
     @player.save;
+    MapBroadcastJob.perform_later
     respond_to do |format|
       format.html { redirect_to game_map_path }
       format.json { render :show, status: :ok, location: @player }
@@ -31,6 +34,7 @@ class PlayersController < ApplicationController
   def right
     @player.x_pos += 1;
     @player.save;
+    MapBroadcastJob.perform_later
     respond_to do |format|
       format.html { redirect_to game_map_path }
       format.json { render :show, status: :ok, location: @player }

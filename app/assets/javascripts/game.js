@@ -24,10 +24,32 @@ $(document).keyup( function( event ) {
   if ( action != "" ) {
     var href = $("#" + action).attr("href") + ".json";
     $.ajax( {
-      url: href,
-      success: function( data ) {
-        window.location.reload();
-      }
+      url: href
     } );
+  }
+} );
+
+$(document).on('turbolinks:load', function() {
+  App.global_chat = App.cable.subscriptions.create({
+    channel: "MapChannel"
+  }, {
+    connected: function() {},
+    disconnected: function() {},
+    received: function(data) {
+      updateMap(data['map']);
+    }
+  });
+  
+  var $map = $('#map');
+  
+  function updateMap(map) {
+    for (var i = 0; i < map.length; ++i) {
+      var $row = $map.find('tr').eq(i);
+      for (var j = 0; j < map[i].length; ++j) {
+        var $cell = $row.find('td').eq(j);
+        $cell.removeClass()
+        $cell.addClass(map[i][j]);
+      }
+    }
   }
 } );

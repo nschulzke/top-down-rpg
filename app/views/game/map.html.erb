@@ -2,20 +2,7 @@
   <% 11.times do |row| %>
   <tr>
     <% 11.times do |column| %>
-    <%
-      name = ""
-      @players.each do |player|
-        if player.x_pos == column && player.y_pos == row
-          name = "player"
-        end
-      end
-      @monsters.each do |monster|
-        if monster.x_pos == column && monster.y_pos == row
-          name = "monster"
-        end
-      end
-    %>
-    <td class="<%= name %>"></td>
+    <td class="<%= @map[row][column] %>"></td>
     <% end %>
   </tr>
   <% end %>
